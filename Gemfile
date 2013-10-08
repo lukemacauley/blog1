@@ -22,6 +22,7 @@ gem 'devise'
 gem 'cancan'
 gem 'rolify'
 gem 'redcarpet'
+gem 'stringex'
 
 group :doc do
   gem 'sdoc', require: false
