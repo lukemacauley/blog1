@@ -21,8 +21,9 @@ gem 'jbuilder', '~> 1.2'
 gem 'devise'
 gem 'cancan'
 gem 'rolify'
-gem 'redcarpet'
 gem 'stringex'
+gem 'simple_form'
+gem 'kramdown'
 
 group :doc do
   gem 'sdoc', require: false

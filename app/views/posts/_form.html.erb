@@ -1,33 +1,10 @@
-<%= form_for(@post) do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<%= simple_form_for(@post) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :content %>
+    <%= f.input :draft %>
+    <%= f.input :slug, placeholder: "Leave blank to automatically generate" %>
+    <%= f.input :url, placeholder: "Optional external link" %>
 
-      <ul>
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :slug %><br>
-    <%= f.text_field :slug %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
-  </div>
-  <div class="field">
-    <%= f.label :draft %><br>
-    <%= f.check_box :draft %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= f.button :submit, 'Preview', id: 'preview-button', preview: true, target: '_blank'  %>
+    <%= f.button :submit, 'Save' %>
 <% end %>
