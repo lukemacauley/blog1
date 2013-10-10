@@ -1,7 +1,11 @@
-<h1>Editing <%= @post.title %></h1>
+<h1>Editing "<%= @post.title %>"</h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @post %> |
 <%= link_to 'Delete', @post, method: :delete, data: { confirm: "Are you sure?" } %> |
-<%= link_to 'Back', :back %> 
+<% if @post.draft == true %>
+	<%= link_to 'Cancel', admin_path %>
+<% else %>
+	<%= link_to 'Cancel', root_path %> 
+<% end %>

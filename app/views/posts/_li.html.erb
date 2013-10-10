@@ -1,12 +1,8 @@
 <li id="post-<%= li.id %>">
 	<h3>
-		<% if li.draft == true %>
-			<%= link_to li.title, edit_post_path(li) %> (Draft) |
-		<% else %>
-			<%= link_to li.title, edit_post_path(li) %> |
-		<% end %>
+		<%= link_to li.title, edit_post_path(li) %> |
 
-			<%= link_to 'View', li, class: 'admin-view' %>
-			<%= link_to 'Delete', li, method: :delete, data: { confirm: 'Are you sure?' } %>
+		<%= link_to 'View', li, class: 'admin-view' %>
+		<%= link_to 'Delete', li, method: :delete, data: { confirm: 'Are you sure?' } %>
 	</h3>
 </li>

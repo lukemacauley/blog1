@@ -3,9 +3,7 @@
 	<h2><%= link_to post.title, post %></h2>
   <h4><%= post.updated_at.strftime('%d %B %Y') %></h4>
 
-	<p>
-		<%= truncate(markdown(post.content), length: 250, separator: ' ', omission: ' ', escape: false) { link_to "Continue Reading", post } %>
-	</p>
+	<%= truncate(markdown(post.content), length: 250, separator: ' ', omission: ' ... ', escape: false) { link_to "Continue Reading", post } %>
   
   <p>
     <%= link_to 'Edit', edit_post_path(post) %> |
