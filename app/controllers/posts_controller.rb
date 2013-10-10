@@ -5,6 +5,12 @@ class PostsController < ApplicationController
     @posts = Post.all.where(draft: false)
   end
 
+  def admin
+    @post = Post.new
+    @drafts = Post.all.where(draft: true)
+    @published = Post.all.where(draft: false)
+  end
+
   def show
   end
 
@@ -34,7 +40,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to root_url
+      redirect_to :back
   end
 
     private
