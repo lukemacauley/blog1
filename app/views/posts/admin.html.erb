@@ -1,5 +1,11 @@
+<%= simple_form_for(@post) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :content %>
+    <%= f.button :submit, 'Save' %>
+<% end %>
+
 <ul>
-	<h2>Drafts</h2>
+	<h2>Ideas</h2>
 	<%= render partial: 'li', collection: @drafts %>
 </ul>
 

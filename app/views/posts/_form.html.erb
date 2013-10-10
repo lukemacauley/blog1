@@ -1,10 +1,8 @@
 <%= simple_form_for(@post) do |f| %>
     <%= f.input :title %>
     <%= f.input :content %>
-    <%= f.input :draft %>
+    <%= f.collection_radio_buttons :draft, [[true, 'Idea'], [false, 'Publish']], :first, :last %>
     <%= f.input :slug, placeholder: "Leave blank to automatically generate" %>
-    <%= f.input :url, placeholder: "Optional external link" %>
 
-    <%= f.button :submit, 'Preview', preview: true, target: '_blank'  %>
     <%= f.button :submit, 'Save' %>
 <% end %>
