@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authorised?, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @posts = Post.all.where(draft: false)
@@ -7,22 +9,22 @@ class PostsController < ApplicationController
 
   def admin
     @post = Post.new
-    @drafts = Post.all.where(draft: true)
-    @published = Post.all.where(draft: false)
+    @drafts = current_user.posts.where(draft: true)
+    @published = current_user.posts.where(draft: false)
   end
 
   def show
   end
 
   def new
-    @post = Post.new
+    @post = current_user.posts.build
   end
 
   def edit
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
     if @post.save
       redirect_to @post, notice: 'Post was successfully created.'
     else
@@ -46,6 +48,12 @@ class PostsController < ApplicationController
     private
       def set_post
         @post = Post.find_by_slug(params[:slug])
+      end
+
+      def authorised?
+        unless @post.user == current_user
+          redirect_to root_path, notice: "Not authorised to edit this pin."
+        end
       end
 
       def post_params

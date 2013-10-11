@@ -6,12 +6,20 @@
 
 <ul>
 	<h2>Ideas</h2>
-	<%= render partial: 'li', collection: @drafts %>
+	<% if @drafts.empty? %>
+		No ideas?
+	<% else %>
+		<%= render partial: 'li', collection: @drafts %>
+	<% end %>
 </ul>
 
 <hr>
 
 <ul>
 	<h2>Published</h2>
-	<%= render partial: 'li', collection: @published %>
+	<% if @published.empty? %>
+		Write something!
+	<% else %>
+		<%= render partial: 'li', collection: @published %>
+	<% end %>
 </ul>
