@@ -9,5 +9,5 @@ Simple blog platform with markdown interface.
 - Learn how to create settings
 - ~~Change Devise's routes~~
 - ~~Change User Sign Up page to full name, email and password~~
-- Link each post to a user and display their name/username (if I create one)
+- ~~Link each post to a user and display their name/username (if I create one)~~
 - Add styling to whole blog platform
