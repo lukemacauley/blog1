@@ -8,5 +8,6 @@ Simple blog platform with markdown interface.
 - Add Rolify for Admin role
 - Learn how to create settings
 - ~~Change Devise's routes~~
-- Change User Log In to username and password, change User Sign Up to full name, username, email, password
+- ~~Change User Sign Up page to full name, email and password~~
+- Link each post to a user and display their name/username (if I create one)
 - Add styling to whole blog platform
