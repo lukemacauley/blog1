@@ -1,10 +1,10 @@
 <% if li.user == current_user %>
 	<li id="post-<%= li.id %>">
-		<h3>
+		<h4>
 			<%= link_to li.title, edit_post_path(li) %> |
 	
 			<%= link_to 'View', li, class: 'admin-view' %>
 			<%= link_to 'Delete', li, method: :delete, data: { confirm: 'Are you sure?' } %>
-		</h3>
+		</h4>
 	</li>
 <% end %>

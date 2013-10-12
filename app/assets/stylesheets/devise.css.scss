@@ -1,0 +1,60 @@
+$blue: #88ACDB;
+
+.devise {
+	max-width: 550px;
+	margin: 100px auto;
+	background-color: #fff;
+	input {
+		border: none;
+		outline: none;
+		&:-webkit-autofill {
+    	-webkit-box-shadow:0 0 0 50px white inset; /* Change the color to your own background color */
+    	-webkit-text-fill-color: $blue;
+		}
+		&:-webkit-autofill:focus {
+		   -webkit-box-shadow: 0 0 0 50px white inset;
+		   -webkit-text-fill-color: $blue;
+		}
+		&[type="submit"] {
+			background-color: $blue;
+			padding: 10px 25px;
+			color: #fff;
+			font-size: 1.3em;
+			margin: 15px 0;
+			border: 1px solid $blue;
+			transition-property: all;
+			transition-duration: .5s;
+			-webkit-transition-timing-function: cubic-bezier(0.13,0.44,0,0.63);
+			-moz-transition-timing-function: cubic-bezier(0.13,0.44,0,0.63);
+			-ms-transition-timing-function: cubic-bezier(0.13,0.44,0,0.63);
+			-o-transition-timing-function: cubic-bezier(0.13,0.44,0,0.63);
+			transition-timing-function: cubic-bezier(0.13,0.44,0,0.63);
+			&:hover, &:focus {
+				color: $blue;
+				background-color: #fff;
+				border: 1px solid $blue;
+			}
+		}
+	}
+	a.shared_links {
+		font-size: 0.85em;
+		&:hover, &:focus {
+			color: $blue;
+		}
+	}
+	#user_login, #user_name, #user_username, #user_email, #user_password, #user_password_confirmation, #user_current_password {
+		width: 100%;
+		color: $blue;
+		margin: 10px 0 10px;
+		padding: 10px;
+		border: 1px solid $blue;
+	}
+	#user_remember_me {
+		display: inline;
+		width: 20px;
+	}
+	.control-label, .hint {
+		font-size: 0.85em;
+		vertical-align: middle;
+	}
+}

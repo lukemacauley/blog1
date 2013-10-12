@@ -1,3 +1,103 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$blue: #88ACDB;
+
+html {
+	font-size: 10px; // 1em = 10px
+}
+
+body {
+		font-size: 1.8em;
+    font-weight: 300;
+    background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #2b2b2b;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #4d4d4d;
+    font-weight: 300;
+    img {
+    	margin: 0;
+    }
+}
+
+ul {
+	list-style-type: none;
+}
+
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: bold;
+    color: #333;
+}
+
+small {
+    font-size: 80%;
+}
+
+a {
+	color: #333;
+  text-decoration: none;
+  outline: 0;
+	transition-property: all;
+	transition-duration: .5s;
+	-webkit-transition-timing-function: cubic-bezier(0.13,0.44,0,0.63);
+	-moz-transition-timing-function: cubic-bezier(0.13,0.44,0,0.63);
+	-ms-transition-timing-function: cubic-bezier(0.13,0.44,0,0.63);
+	-o-transition-timing-function: cubic-bezier(0.13,0.44,0,0.63);
+	transition-timing-function: cubic-bezier(0.13,0.44,0,0.63);
+  &:link, &:visited, &:hover, &:active {
+  	text-decoration: none;
+  }
+	&:hover, &:focus {
+		color: #000;
+	}
+}
+
+section.posts, article.post {
+	max-width: 550px;
+	margin: 50px auto;
+	h1, h2 {
+		margin-bottom: -15px;
+	}
+	h4 {
+		color: $blue;
+		a {
+			color: $blue;
+			&:hover {
+				color: #000;
+			}
+		}
+	}
+	span.date {
+		float: right;
+	}
+	blockquote {
+		border-left: 10px solid $blue;
+		padding-left: 20px;
+		margin: 0;
+		p {
+			color: #777;
+		}
+	}
+	a.continue {
+		color: $blue;
+		&:hover {
+			color: #000;
+		}
+	}
+}

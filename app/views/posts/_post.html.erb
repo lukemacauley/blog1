@@ -1,4 +1,11 @@
-<h2><%= @post.title %></h2>
-<h4><%= @post.updated_at.strftime('%d %B %Y') %></h4>
+<article class="post" id="post-<%= @post.id %>">
 
-<p><%= markdown(@post.content) unless @post.content.nil? %></p>
+	<h1><%= @post.title %></h1>
+	<h4>
+		<span class="name"><%= link_to @post.user.name, '#' %></span>
+		<span class="date"><%= @post.updated_at.strftime('%d %B %Y') %></span>
+	</h4>
+	
+	<%= markdown(@post.content) unless @post.content.nil? %>
+
+</article>

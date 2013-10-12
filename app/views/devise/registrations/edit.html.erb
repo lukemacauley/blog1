@@ -1,26 +1,28 @@
-<h2>Edit Account</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), hmtl: { method: :put }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :name, label: false, placeholder: "Full Name", required: false, autofocus: true %>
-    <%= f.input :username, label: false, placeholder: "Username", required: true %>
-    <%= f.input :email, label: false, placeholder: "Email", required: true %>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
-    <%= f.input :password, autocomplete: "off", label: false, placeholder: "New Password", hint: "Leave it blank if you don't want to change it", required: false %>
-    <%= f.input :password_confirmation, label: false, placeholder: "New Password Confirmation", required: false %>
-    <%= f.input :current_password, label: false, placeholder: "Current Password", hint: "We need your current password to confirm your changes", required: true %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel Account</h3>
-
-<p><%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+<section class="devise">
+  <h1>Edit Account</h1>
+  
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), hmtl: { method: :put }) do |f| %>
+    <%= f.error_notification %>
+  
+    <div class="form-inputs">
+      <%= f.input :name, label: false, placeholder: "Full Name", required: false, autofocus: true %>
+      <%= f.input :username, label: false, placeholder: "Username", required: true %>
+      <%= f.input :email, label: false, placeholder: "Email", required: true %>
+  
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+      <% end %>
+      <%= f.input :password, autocomplete: "off", label: false, placeholder: "New Password", required: false %>
+      <%= f.input :password_confirmation, label: false, placeholder: "New Password Confirmation", required:   false %>
+      <%= f.input :current_password, label: false, placeholder: "Current Password", hint: "We need your current password to confirm your changes", required: true %>
+    </div>
+  
+    <div class="form-actions">
+      <%= f.button :submit, "Update" %>
+    </div>
+  <% end %>
+  
+  <h2>Cancel Account</h2>
+  
+  <p><%= link_to "Cancel my account", registration_path(resource_name), class: "shared_links", :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+</section>
