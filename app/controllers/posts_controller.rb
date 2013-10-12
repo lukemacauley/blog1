@@ -42,7 +42,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-      redirect_to :back
+      redirect_to :admin
   end
 
     private

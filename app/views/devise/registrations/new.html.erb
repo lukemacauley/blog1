@@ -4,10 +4,10 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-  	<%= f.input :name, placeholder: "Full Name", required: true, autofocus: true %>
-    <%= f.input :username, required: true %>
-    <%= f.input :email, required: true %>
-    <%= f.input :password, required: true %>
+  	<%= f.input :name, placeholder: "Full Name", label: false, required: true, autofocus: true %>
+    <%= f.input :username, placeholder: "Username", label: false, required: true %>
+    <%= f.input :email, placeholder: "Email", label: false, required: true %>
+    <%= f.input :password, placeholder: "Password", label: false, required: true %>
   </div>
 
   <div class="form-actions">

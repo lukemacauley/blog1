@@ -1,9 +1,9 @@
 <% @posts.each do |post| %>
 
 	<h2><%= link_to post.title, post %></h2>
-  <h4><%= post.updated_at.strftime('%d %B %Y') %></h4>
+  <h4><%= link_to "#{post.user.username}", '#' %> <%= "on" unless post.user.name.nil? %> <%= post.updated_at.strftime('%d %B %Y') %></h4>
 
-	<%= truncate(markdown(post.content), length: 250, separator: ' ', omission: ' ... ', escape: false) { link_to "Continue Reading", post } %>
+	<% truncate(markdown(post.content), length: 250, separator: ' ', omission: ' ... ', escape: false) { link_to "Continue Reading", post } %>
   
   <% if post.user == current_user %>
   <p>
