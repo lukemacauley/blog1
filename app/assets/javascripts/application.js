@@ -14,3 +14,27 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+var createAttachment = function(file) {
+  var uid  = [App.username, (new Date).getTime(), 'raw'].join('-');
+
+  var data = new FormData();
+
+  data.append('attachment[name]', file.name);
+  data.append('attachment[file]', file);
+  data.append('attachment[uid]',  uid);
+
+  $.ajax({
+    url: '/attachments',
+    data: data,
+    cache: false,
+    contentType: false,
+    processData: false,
+    type: 'POST',
+  }).error(function(){
+    // ...
+  });
+
+  var absText = '![' file.name + '](/attachments/' + uid + ')';
+  $('.new_post_area').insertAtCaret(absText);
+};
