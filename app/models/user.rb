@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   validates :name, presence: true
   validates :username, presence: true, uniqueness: { case_sensitive: false }
 
-  has_many :posts
+  has_many :posts, dependent: :destroy
 
   def self.find_first_by_auth_conditions(warden_conditions)
       conditions = warden_conditions.dup

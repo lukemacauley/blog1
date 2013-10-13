@@ -4,7 +4,7 @@
   
       <h1><%= link_to post.title, post %></h1>
       <h4>
-        <span class="name"><%= link_to post.user.name, 'javascript:void(0)' %></span>
+        <span class="name"><%= link_to post.user.name, user_path(post.user) %></span>
         <span class="date"><%= post.updated_at.strftime('%d %B %Y') %></span>
       </h4>
     

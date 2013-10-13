@@ -2,7 +2,7 @@
 
 	<h1><%= @post.title %></h1>
 	<h4>
-		<span class="name"><%= link_to @post.user.name, '#' %></span>
+		<span class="name"><%= link_to @post.user.name, user_path(@post.user) %></span>
 		<span class="date"><%= @post.updated_at.strftime('%d %B %Y') %></span>
 		<% if @post.user == current_user %>
 			<span><%= link_to "Edit this post?", edit_post_path(@post), class: "edit-post" %></span>

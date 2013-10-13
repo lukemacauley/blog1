@@ -15,6 +15,7 @@ Blog1::Application.routes.draw do
 
       get 'admin' => 'posts#admin'
 
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
@@ -29,6 +30,7 @@ Blog1::Application.routes.draw do
   #   resources :products
 
       resources :posts, only: [:create]
+      resources :users, only: [:show]
 
   # Example resource route with options:
   #   resources :products do

@@ -24,6 +24,7 @@ gem 'rolify'
 gem 'stringex'
 gem 'simple_form'
 gem 'kramdown'
+gem 'mousetrap-rails'
 
 group :doc do
   gem 'sdoc', require: false
