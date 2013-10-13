@@ -8,6 +8,8 @@ Simple blog platform with markdown interface.
 - Add Rolify to create an Admin role
 - Create User settings
 - ~~Add User profiles with Posts they have created~~
+- Change User profile routes to /:username not /users/:id
+- Change Edit accout route to /:username/edit to match posts edit routes
 - ~~Add pages where Posts can be shown by their date~~
 - ~~Change Devise's routes~~
 - ~~Change User Sign Up page to full name, email and password~~
