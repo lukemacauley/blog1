@@ -1,8 +1,16 @@
 <%= simple_form_for(@post) do |f| %>
-    <%= f.input :title, label: false, placeholder: "Title here..." %>
-    <%= f.input :content, label: false, placeholder: "Write post here..." %>
-    <%= f.collection_radio_buttons :draft, [[true, 'Idea'], [false, 'Publish']], :first, :last %>
-    <%= f.input :slug, placeholder: "Leave blank to automatically generate" %>
+	<h1><%= f.input :title, label: false, placeholder: "Title here..." %></h1>
+	<%= f.input :content, label: false, placeholder: "Write post here..." %>
+	<%= image_tag("markdown.png", alt: "Markdown", class: "markdown") %>
 
-    <%= f.button :submit, 'Save' %>
+	<div class="controls">
+    <%= f.collection_radio_buttons :draft, [[true, "&nbsp;".html_safe], [false, "&nbsp;".html_safe]], :first, :last %>
+    <%= f.input :slug, placeholder: "Slug — Leave blank to use title", label: false %>
+    <%= f.button :submit, 'Save', class: "submit-btn" %>
+    <% if @post.draft == true %>
+			<%= link_to '&#171 Admin'.html_safe, admin_path, class: "btn btn-controls" %>
+		<% else %>
+			<%= link_to '&#171 Admin'.html_safe, root_path, class: "btn btn-controls" %> 
+		<% end %>
+  </div>
 <% end %>
