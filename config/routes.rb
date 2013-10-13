@@ -26,6 +26,8 @@ Blog1::Application.routes.draw do
       put ':slug' => 'posts#update'
       delete ':slug' => 'posts#destroy'
 
+      #get ':username' => 'users#show', as: :user
+
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 

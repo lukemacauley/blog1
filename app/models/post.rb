@@ -5,8 +5,6 @@ class Post < ActiveRecord::Base
 	
 	acts_as_url :title, url_attribute: :slug
 
-	default_scope -> { order('created_at DESC') }
-
 	belongs_to :user
 
 	def to_param

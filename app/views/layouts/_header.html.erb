@@ -1,15 +1,15 @@
 <header>
 	<nav>
 		<ul>
-			<li><%= link_to "Blog1", root_path %></li>
+			<li><%= link_to "Blog1", root_path, data: { keybinding: 'h' } %></li>
 			<% if user_signed_in? %>
-				<li><%= link_to "Admin", admin_path %></li>
+				<li><%= link_to "Admin", admin_path, data: { keybinding: 'a' } %></li>
 		</ul>
 	</nav>
 	<ul class="profile">
 		<li><%= link_to "Profile", 'javascript:void(0)' %>
 			<ul class="profile_links">
-				<li><%= link_to "View Profile", user_path(current_user) %></li>
+				<li><%= link_to "View Profile", user_path(current_user), data: { keybinding: 'p' } %></li>
 				<li><%= link_to "Edit Account", edit_user_registration_path %></li>
 				<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
 			</ul>
