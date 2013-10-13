@@ -52,7 +52,7 @@ class PostsController < ApplicationController
 
       def authorised?
         unless @post.user == current_user
-          redirect_to root_path, notice: "Not authorised to edit this pin."
+          redirect_to root_path, notice: "Not authorised to edit this post."
         end
       end
 

@@ -4,11 +4,11 @@
   
       <h1><%= link_to post.title, post %></h1>
       <h4>
-        <span class="name"><%= link_to post.user.name, '#' %></span>
+        <span class="name"><%= link_to post.user.name, 'javascript:void(0)' %></span>
         <span class="date"><%= post.updated_at.strftime('%d %B %Y') %></span>
       </h4>
     
-      <%= truncate(markdown(post.content), length: 500, separator: ' ', omission: ' ... ', escape: false) {   link_to "Continue Reading", post, class: "continue" } %>
+      <%= truncate(markdown(post.content), length: 500, separator: ' ', omission: ' ... ', escape: false) {   link_to "Continue Reading &#187".html_safe, post, class: "continue" } %>
     </article>
   <% end %>
 </section>

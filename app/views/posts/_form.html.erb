@@ -7,10 +7,6 @@
     <%= f.collection_radio_buttons :draft, [[true, "&nbsp;".html_safe], [false, "&nbsp;".html_safe]], :first, :last %>
     <%= f.input :slug, placeholder: "Slug — Leave blank to use title", label: false %>
     <%= f.button :submit, 'Save', class: "submit-btn" %>
-    <% if @post.draft == true %>
-			<%= link_to '&#171 Admin'.html_safe, admin_path, class: "btn btn-controls" %>
-		<% else %>
-			<%= link_to '&#171 Admin'.html_safe, root_path, class: "btn btn-controls" %> 
-		<% end %>
+		<%= link_to '&#171 Admin'.html_safe, root_path, class: "btn admin-controls" %>
   </div>
 <% end %>
