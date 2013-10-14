@@ -2,6 +2,8 @@ Blog1::Application.routes.draw do
 
   devise_for :users, path: "", path_names: { sign_in: 'login', sign_out: 'logout', confirmation: 'verification', unlock: 'unblock', registration: 'account', sign_up: 'new' }
 
+  resources :users, only: [:show]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -15,9 +17,10 @@ Blog1::Application.routes.draw do
 
       get 'admin' => 'posts#admin'
 
-
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+
+      #get ':username' => 'users#show', as: :user
 
       get 'new' => 'posts#new', as: :new_post
       get ':slug' => 'posts#show', as: :post
@@ -26,13 +29,10 @@ Blog1::Application.routes.draw do
       put ':slug' => 'posts#update'
       delete ':slug' => 'posts#destroy'
 
-      #get ':username' => 'users#show', as: :user
-
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
       resources :posts, only: [:create]
-      resources :users, only: [:show]
 
   # Example resource route with options:
   #   resources :products do

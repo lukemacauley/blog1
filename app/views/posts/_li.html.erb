@@ -4,7 +4,7 @@
 			<%= link_to li.title, edit_post_path(li) %> |
 	
 			<%= link_to 'View', li, class: 'admin-view' %>
-			<%= link_to 'Delete', li, method: :delete, data: { confirm: 'Are you sure?' } %>
+			<%= link_to 'Delete', li, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
 		</h4>
 	</li>
 <% end %>

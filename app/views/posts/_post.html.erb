@@ -6,7 +6,7 @@
 		<span class="date"><%= @post.updated_at.strftime('%d %B %Y') %></span>
 		<% if @post.user == current_user %>
 			<span><%= link_to "Edit this post?", edit_post_path(@post), class: "edit-post" %></span>
-			<span><%= link_to "Delete this post?", @post, method: :delete, data: { confirm: "Are you sure?" }, class: "delete-post" %></span>
+			<span><%= link_to "Delete this post?", @post, method: :delete, data: { confirm: "Are you sure?" }, class: "delete-post", remote: true %></span>
 		<% end %>
 	</h4>
 	
