@@ -42,10 +42,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    respond_to do |format|
-      format.html { redirect_to :admin }
-      format.js
-    end
+    redirect_to :admin
   end
 
     private

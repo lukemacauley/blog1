@@ -25,6 +25,7 @@ gem 'stringex'
 gem 'simple_form'
 gem 'kramdown'
 gem 'mousetrap-rails'
+gem 'jquery-ui-rails'
 
 group :doc do
   gem 'sdoc', require: false

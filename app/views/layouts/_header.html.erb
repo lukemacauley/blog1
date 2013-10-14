@@ -4,6 +4,7 @@
 			<li><%= link_to "Blog1", root_path, data: { keybinding: 'h' } %></li>
 			<% if user_signed_in? %>
 				<li><%= link_to "Admin", admin_path, data: { keybinding: 'a' } %></li>
+				<li><%= link_to "New", new_post_path, data: { keybinding: 'n' } %></li>
 		</ul>
 	</nav>
 	<ul class="profile">

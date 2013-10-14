@@ -1,5 +1,5 @@
 <%= simple_form_for(@post) do |f| %>
-	<h1><%= f.input :title, label: false, placeholder: "Title here..." %></h1>
+	<h1><%= f.input :title, label: false, placeholder: "Title here...", autofocus: true %></h1>
 	<%= f.input :content, label: false, placeholder: "Write post here..." %>
 	<%= image_tag("markdown.png", alt: "Markdown", class: "markdown") %>
 
