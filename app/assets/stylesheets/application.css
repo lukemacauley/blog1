@@ -11,5 +11,6 @@
  *= require normalize
  *= require_self
  *= require jquery.ui.all
+ *= require mousetrap
  *= require_tree .
  */
