@@ -1,0 +1,7 @@
+<% if @post.new_record? %>
+	$('input#post_title').effect('highlight', { color: 'red' });
+<% else %>
+	$('#ideas').append("<%= escape_javascript(render @post) %>");
+	$('#<%= dom_id(@post) %>').effect('highlight');
+	e.preventDefault();
+<% end %>

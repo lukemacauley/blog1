@@ -1,24 +1,28 @@
-<%= simple_form_for(@post) do |f| %>
+<section class="admin">
+	<%= simple_form_for(@post, remote: true) do |f| %>
     <%= f.input :title, placeholder: "Start typing an idea here...", label: false %>
     <%= f.button :submit, 'Save' %>
-<% end %>
-
-<ul>
-	<h2>Ideas</h2>
-	<% if @drafts.empty? %>
-		No ideas?
-	<% else %>
-		<%= render partial: 'li', collection: @drafts %>
 	<% end %>
-</ul>
 
-<hr>
-
-<ul>
-	<h2>Published</h2>
-	<% if @published.empty? %>
-		Write something!
-	<% else %>
-		<%= render partial: 'li', collection: @published %>
-	<% end %>
-</ul>
+	<div class="posts">
+		<h2>Ideas</h2>
+		<% if @drafts.empty? %>
+			No ideas?
+		<% else %>
+			<div id="ideas">
+				<%= render partial: 'li', collection: @drafts %>
+			</div>
+		<% end %>
+	</div>
+	
+	<hr>
+	
+	<div class="posts">
+		<h2>Published</h2>
+		<% if @published.empty? %>
+			Write something!
+		<% else %>
+			<%= render partial: 'li', collection: @published %>
+		<% end %>
+	</div>
+</section>

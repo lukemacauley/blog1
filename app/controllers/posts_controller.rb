@@ -25,10 +25,14 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
-    if @post.save
-      redirect_to @post, notice: 'Post was successfully created.'
-    else
-      render action: 'edit'
+
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+      else
+        format.html { render action: 'edit' }
+      end
+      format.js
     end
   end
 
@@ -42,7 +46,11 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to :admin
+
+    respond_to do |format|
+      format.html { redirect_to :admin }
+      format.js
+    end
   end
 
     private
